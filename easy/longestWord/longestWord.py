@@ -1,5 +1,9 @@
+# Makes Python 2.x and 3.x play nice.
+try: input = raw_input
+except NameError: pass
+
 def longestWord(sentence):
-    words = sentence.split()
+    words = sentence.split(" ")
     longest = ""
     max = 0
     for word in words:
@@ -14,4 +18,4 @@ def longestWord(sentence):
             max = count
     return longest
 
-print(longestWord(raw_input("Enter a String: ")))
+print(longestWord(input("Enter a String: ")))
